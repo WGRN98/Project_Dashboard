@@ -162,7 +162,6 @@ df_selection=pd.DataFrame(selection, columns=['Feature', 'Univariate linear regr
 
 #Just for site presentation
 df_data_final=df_data.drop(columns=['HR', 'windSpeed_m/s', 'windGust_m/s', 'pres_mbar', 'rain_mm/h', 'rain_day', 'Holiday', 'Weekday', 'Month', 'day2', 'HDH', 'HDH_Rad', 'temp_C', 'solarRad_W/m2'])
-
 df_data_2017_final=df_data_final[:'2017-12-31']
 df_data_2017_final.reset_index(inplace=True)
 df_data_2018_final=df_data_final['2018-01-01':]
@@ -321,79 +320,6 @@ MSE_NN=metrics.mean_squared_error(y_test,y_pred_NN)
 RMSE_NN= np.sqrt(metrics.mean_squared_error(y_test,y_pred_NN))
 cvRMSE_NN=RMSE_NN/np.mean(y_test)
 
-
-plt.plot(y_test[1:200])
-plt.plot(y_pred_LR[1:200])
-plt.savefig('assets/fig0s.png')
-plt.show()
-plt.scatter(y_test,y_pred_LR)
-plt.savefig('assets/fig0p.png')
-plt.show()
-
-plt.plot(y_test[1:200])
-plt.plot(y_pred_SVR2[1:200])
-plt.savefig('assets/fig1s.png')
-plt.show()
-plt.scatter(y_test,y_pred_SVR2)
-plt.savefig('assets/fig1p.png')
-plt.show()
-
-plt.plot(y_test[1:200])
-plt.plot(y_pred_DT[1:200])
-plt.savefig('assets/fig2s.png')
-plt.show()
-plt.scatter(y_test,y_pred_DT)
-plt.savefig('assets/fig2p.png')
-plt.show()
-
-plt.plot(y_test[1:200])
-plt.plot(y_pred_RF[1:200])
-plt.savefig('assets/fig3s.png')
-plt.show()
-plt.scatter(y_test,y_pred_RF)
-plt.savefig('assets/fig3p.png')
-plt.show()
-
-plt.plot(y_test[1:200])
-plt.plot(y_pred_RF[1:200])
-plt.savefig('assets/fig4s.png')
-plt.show()
-plt.scatter(y_test,y_pred_RF)
-plt.savefig('assets/fig4p.png')
-plt.show()
-
-plt.plot(y_test[1:200])
-plt.plot(y_pred_GB[1:200])
-plt.savefig('assets/fig5s.png')
-plt.show()
-plt.scatter(y_test,y_pred_GB)
-plt.savefig('assets/fig5p.png')
-plt.show()
-
-plt.plot(y_test[1:200])
-plt.plot(y_pred_XGB[1:200])
-plt.savefig('assets/fig6s.png')
-plt.show()
-plt.scatter(y_test,y_pred_XGB)
-plt.savefig('assets/fig6p.png')
-plt.show()
-
-plt.plot(y_test[1:200])
-plt.plot(y_pred_BT[1:200])
-plt.savefig('assets/fig7s.png')
-plt.show()
-plt.scatter(y_test,y_pred_BT)
-plt.savefig('assets/fig7p.png')
-plt.show()
-
-plt.plot(y_test[1:200])
-plt.plot(y_pred_NN[1:200])
-plt.savefig('assets/fig8s.png')
-plt.show()
-plt.scatter(y_test,y_pred_NN)
-plt.savefig('assets/fig8p.png')
-plt.show()
-
 #Importing Dash
 import dash
 import dash_core_components as dcc
@@ -436,13 +362,6 @@ def generate_table(dataframe, max_rows=100):
             ]) for i in range(min(len(dataframe), max_rows))
         ])
     ])
-
-
-#Generate scatter plot
-
-#Generate prediction plot
-
-#Generate line plot
 
 external_stylesheets = ['https://codepen.io/chriddyp/pen/bWLwgP.css']
 
