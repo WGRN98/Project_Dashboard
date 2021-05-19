@@ -113,26 +113,26 @@ X=df_data.values
 Y_f=X[:,0]
 X_f=X[:,[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18]]
 
-features_regression=SelectKBest(k=3, score_func=f_regression) # Test different k number of features, uses f-test ANOVA
-fit_regression=features_regression.fit(X_f,Y_f) #Calculates the f_regression of the features
-print(fit_regression.scores_)
-features_regression_results=fit_regression.transform(X_f)
+#features_regression=SelectKBest(k=3, score_func=f_regression) # Test different k number of features, uses f-test ANOVA
+#fit_regression=features_regression.fit(X_f,Y_f) #Calculates the f_regression of the features
+#print(fit_regression.scores_)
+#features_regression_results=fit_regression.transform(X_f)
 #print(features_regression_results)
 
-features_mutual=SelectKBest(k=3, score_func=mutual_info_regression) #Test diferent k number of features
-fit_mutual=features_mutual.fit(X_f,Y_f) #Calculates the f_regression of the features
-print(fit_mutual.scores_)
-features_mutual_results=fit_mutual.transform(X_f)
+#features_mutual=SelectKBest(k=3, score_func=mutual_info_regression) #Test diferent k number of features
+#fit_mutual=features_mutual.fit(X_f,Y_f) #Calculates the f_regression of the features
+#print(fit_mutual.scores_)
+#features_mutual_results=fit_mutual.transform(X_f)
 #print(features_mutual_results)
 
-model_linear=LinearRegression() #LinearRegression Model as estimator
-rfe=RFE(model_linear,n_features_to_select=1) #Using 1 features
-fit_linear=rfe.fit(X_f,Y_f)
-print("Feature Ranking (Linear Model, 1 features): %s" % (fit_linear.ranking_)) 
+#model_linear=LinearRegression() #LinearRegression Model as estimator
+#rfe=RFE(model_linear,n_features_to_select=1) #Using 1 features
+#fit_linear=rfe.fit(X_f,Y_f)
+#print("Feature Ranking (Linear Model, 1 features): %s" % (fit_linear.ranking_)) 
 
-model_forest=RandomForestRegressor()
-model_forest.fit(X_f,Y_f)
-print(model_forest.feature_importances_)
+#model_forest=RandomForestRegressor()
+#model_forest.fit(X_f,Y_f)
+#print(model_forest.feature_importances_)
 
 
 
