@@ -1,5 +1,5 @@
-#CAUTION, program takes a very long time to run, it is recommended that it be run in parts
-#Skipping feature selection is recommended for faster run times
+#CAUTION, program takes a long time to run, can run it in parts as they are separated and generate plots in \assets
+#Skipping feature selection is recommended for faster run times, not always needed
 
 #Libraries
 import pandas as pd
