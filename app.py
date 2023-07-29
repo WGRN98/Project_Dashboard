@@ -1,5 +1,5 @@
-#To get new plots and values re-run data.py
-#Every plot had to be remade with plotly
+#Run data.py for new plots and values
+#Every plot had to be remade with plotly, unsure why
 
 #Could not figure out how to use multi dropdown or multi select menus
 
